@@ -12,4 +12,4 @@ jobs:
       - name: create issue
         run: |
           echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
-          gh issue create --title "I found a bug"
+          gh issue create --title "I found a bug" --body "Nothing works"
