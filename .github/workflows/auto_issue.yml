@@ -1,0 +1,14 @@
+name: auto issue workflow
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: auto issue
+    runs-on: ubuntu-latest
+    steps:
+      - name: create issue
+        run: |
+          gh issue create --title "I found a bug"
