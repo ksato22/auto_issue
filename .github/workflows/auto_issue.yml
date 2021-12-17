@@ -11,11 +11,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Get runner name
-        env:
-          RUNNER_NAME: ${{ runner.name }}
       - name: Create issue
-        if: env.RUNNER_NAME = "Hosted Runner"
+        if: ${{ runner.name == "Hosted Runner" }}
         run: |
           echo ${{ runner.name }}
 #          echo ${{ secrets.PAT }} | gh auth login --with-token
