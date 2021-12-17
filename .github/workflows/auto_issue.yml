@@ -15,3 +15,4 @@ jobs:
         run: |
           echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
           gh issue create --title "I found a bug" --body "Nothing works"
+          gh issue create --repo https://github.com/ksato22/auto_issue/
