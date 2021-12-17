@@ -8,10 +8,13 @@ jobs:
   build:
     name: auto issue
     runs-on: ubuntu-latest
+    env:
+      MyRunner: ${{ runner.name }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Create issue
+        if: env.MyRunner = "Hosted Runner"
         run: |
           echo ${{ runner.name }}
 #          echo ${{ secrets.PAT }} | gh auth login --with-token
