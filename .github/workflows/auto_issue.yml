@@ -11,4 +11,5 @@ jobs:
     steps:
       - name: create issue
         run: |
+          gh auth login --with-token ${{ secrets.GITHUB_TOKEN }}
           gh issue create --title "I found a bug"
