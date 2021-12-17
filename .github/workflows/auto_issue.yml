@@ -9,7 +9,9 @@ jobs:
     name: auto issue
     runs-on: ubuntu-latest
     steps:
-      - name: create issue
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Create issue
         run: |
           echo ${{ secrets.GITHUB_TOKEN }} | gh auth login --with-token
           gh issue create --title "I found a bug" --body "Nothing works"
